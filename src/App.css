@@ -1,0 +1,464 @@
+body {
+  background: #0b0f14;
+  color: white;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  background: linear-gradient(to bottom, rgba(180, 0, 0, 0.6), transparent);
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  background: linear-gradient(to top, rgba(180, 0, 0, 0.6), transparent);
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body.card-hovered::before,
+body.card-hovered::after {
+  opacity: 1;
+}
+
+/* MAIN */
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* BOTÕES */
+button {
+  background: transparent;
+  border: 1px solid #00aaff;
+  color: #00aaff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #00aaff;
+  color: #fff;
+  scale: 1.1;
+}
+
+.link {
+  width: 30%;
+  height: auto;
+  margin-top: 5%;
+  transition: 0.2s;
+}
+
+a {
+  width: 100%;
+  height: 10vh;
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+}
+
+.link:hover {
+  scale: 1.02;
+}
+
+/* CONTAINERS */
+.atacantes,
+.defensores {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  width: 20%;
+  height: 50vh;
+  background: #1a1f27;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border-top: 1px solid #ff0000;
+  border-bottom: 1px solid #ff0000;
+  box-shadow: 0 -4px 15px rgba(255, 0, 0, 0.6), 0 4px 15px rgba(255, 0, 0, 0.6);
+}
+
+/* DIVS DE IMAGEM (Ace, Iana, etc.) */
+.card > div:first-child {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: filter 0.3s;
+}
+
+/* Escurece a imagem no hover */
+.card:hover > div:first-child {
+  filter: brightness(0.4);
+}
+
+/* H1 escondido por padrão */
+.card > div:first-child h1 {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  z-index: 4;
+  height: auto;
+}
+
+/* H1 aparece no hover */
+.card:hover > div:first-child h1 {
+  opacity: 1;
+}
+
+/* HABILIDADE */
+.habilidade {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 4;
+  color: #ff4444;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Habilidade aparece no hover */
+.card:hover .habilidade {
+  opacity: 1;
+}
+/* puta merda */
+
+.Ace {
+  background-image: url("./src/assets/atacantes/ace.png");
+}
+
+.Amaru {
+  background-image: url("./src/assets/atacantes/amaru.png");
+}
+
+.Ash {
+  background-image: url("./src/assets/atacantes/ash.png");
+}
+
+.Blackbeard {
+  background-image: url("./src/assets/atacantes/blackbeard.png");
+}
+
+.Blitz {
+  background-image: url("./src/assets/atacantes/blitz.png");
+}
+
+.Brava {
+  background-image: url("./src/assets/atacantes/brava.png");
+}
+
+.Buck {
+  background-image: url("./src/assets/atacantes/buck.png");
+}
+
+.Capitao {
+  background-image: url("./src/assets/atacantes/capitao.png");
+}
+
+.Deimos {
+  background-image: url("./src/assets/atacantes/deimos.png");
+}
+
+.Dokkaebi {
+  background-image: url("./src/assets/atacantes/dokkaebi.png");
+}
+
+.Finka {
+  background-image: url("./src/assets/atacantes/finka.png");
+}
+
+.Fuze {
+  background-image: url("./src/assets/atacantes/fuze.png");
+}
+
+.Glaz {
+  background-image: url("./src/assets/atacantes/glaz.png");
+}
+
+.Gridlock {
+  background-image: url("./src/assets/atacantes/gridlock.png");
+}
+
+.Grim {
+  background-image: url("./src/assets/atacantes/grim.png");
+}
+
+.Hibana {
+  background-image: url("./src/assets/atacantes/hibana.png");
+}
+
+.Iana {
+  background-image: url("./src/assets/atacantes/iana.png");
+}
+
+.IQ {
+  background-image: url("./src/assets/atacantes/iq.png");
+}
+
+.Jackal {
+  background-image: url("./src/assets/atacantes/jackal.png");
+}
+
+.Kali {
+  background-image: url("./src/assets/atacantes/kali.png");
+}
+
+.Lion {
+  background-image: url("./src/assets/atacantes/lion.png");
+}
+
+.Maverick {
+  background-image: url("./src/assets/atacantes/maverick.png");
+}
+
+.Montagne {
+  background-image: url("./src/assets/atacantes/montagne.png");
+}
+
+.Nokk {
+  background-image: url("./src/assets/atacantes/nokk.png");
+}
+
+.Nomad {
+  background-image: url("./src/assets/atacantes/nomad.png");
+}
+
+.Osa {
+  background-image: url("./src/assets/atacantes/osa.png");
+}
+
+.Ram {
+  background-image: url("./src/assets/atacantes/ram.png");
+}
+
+.Solid {
+  background-image: url("./src/assets/atacantes/solid.png");
+}
+
+.Sens {
+  background-image: url("./src/assets/atacantes/sens.png");
+}
+
+.Sledge {
+  background-image: url("./src/assets/atacantes/sledge.png");
+}
+
+.Striker {
+  background-image: url("./src/assets/atacantes/striker.png");
+}
+
+.Thatcher {
+  background-image: url("./src/assets/atacantes/thatcher.png");
+}
+
+.Thermite {
+  background-image: url("./src/assets/atacantes/thermite.png");
+}
+
+.Twitch {
+  background-image: url("./src/assets/atacantes/twitch.png");
+}
+
+.Ying {
+  background-image: url("./src/assets/atacantes/ying.png");
+}
+
+.Zero {
+  background-image: url("./src/assets/atacantes/zero.png");
+}
+
+.Zofia {
+  background-image: url("./src/assets/atacantes/zofia.png");
+}
+
+/* defensores */
+
+
+.Alibi {
+  background-image: url("./src/assets/defensores/alibi.png");
+}
+
+.Aruni {
+  background-image: url("./src/assets/defensores/aruni.png");
+}
+
+.Azami {
+  background-image: url("./src/assets/defensores/azami.png");
+}
+
+.Bandit {
+  background-image: url("./src/assets/defensores/bandit.png");
+}
+
+.Castle {
+  background-image: url("./src/assets/defensores/castle.png");
+}
+
+.Caveira {
+  background-image: url("./src/assets/defensores/caveira.png");
+}
+
+.Clash {
+  background-image: url("./src/assets/defensores/clash.png");
+}
+
+.Doc {
+  background-image: url("./src/assets/defensores/doc.png");
+}
+
+.Echo {
+  background-image: url("./src/assets/defensores/echo.png");
+}
+
+.Ela {
+  background-image: url("./src/assets/defensores/ela.png");
+}
+
+.Fenrir {
+  background-image: url("./src/assets/defensores/fenrir.png");
+}
+
+.Frost {
+  background-image: url("./src/assets/defensores/frost.png");
+}
+
+.Goyo {
+  background-image: url("./src/assets/defensores/goyo.png");
+}
+
+.Jager {
+  background-image: url("./src/assets/defensores/jager.png");
+}
+
+.Kaid {
+  background-image: url("./src/assets/defensores/kaid.png");
+}
+
+.Kapkan {
+  background-image: url("./src/assets/defensores/kapkan.png");
+}
+
+.Lesion {
+  background-image: url("./src/assets/defensores/lesion.png");
+}
+
+.Maestro {
+  background-image: url("./src/assets/defensores/maestro.png");
+}
+
+.Melusi {
+  background-image: url("./src/assets/defensores/melusi.png");
+}
+
+.Mira {
+  background-image: url("./src/assets/defensores/mira.png");
+}
+
+.Mozzie {
+  background-image: url("./src/assets/defensores/mozzie.png");
+}
+
+.Mute {
+  background-image: url("./src/assets/defensores/mute.png");
+}
+
+.Oryx {
+  background-image: url("./src/assets/defensores/oryx.png");
+}
+
+.Pulse {
+  background-image: url("./src/assets/defensores/pulse.png");
+}
+
+.Rook {
+  background-image: url("./src/assets/defensores/rook.png");
+}
+
+.Sentry {
+  background-image: url("./src/assets/defensores/sentry.png");
+}
+
+.Smoke {
+  background-image: url("./src/assets/defensores/smoke.png");
+}
+
+.Solis {
+  background-image: url("./src/assets/defensores/solis.png");
+}
+
+.Tachanka {
+  background-image: url("./src/assets/defensores/tachanka.png");
+}
+
+.Thorn {
+  background-image: url("./src/assets/defensores/thorn.png");
+}
+
+.Thunderbird {
+  background-image: url("./src/assets/defensores/thunderbird.png");
+}
+
+.Tubarao {
+  background-image: url("./src/assets/defensores/tubarao.png");
+}
+
+.Valkyrie {
+  background-image: url("./src/assets/defensores/valkyrie.png");
+}
+
+.Vigil {
+  background-image: url("./src/assets/defensores/vigil.png");
+}
+
+.Warden {
+  background-image: url("./src/assets/defensores/warden.png");
+}
+
+.Wamai {
+  background-image: url("./src/assets/defensores/wamai.png");
+}
